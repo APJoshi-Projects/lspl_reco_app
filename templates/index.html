@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LSPL Recommender</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">LSPL Advisor</div>
+  </header>
+  <main>
+    <section class="card">
+      <h2>New Recommendation</h2>
+      <form id="recoForm">
+        <div class="grid">
+          <label>Division
+            <select name="division" required>
+              <option value="">Select</option>
+              <option>Forging</option>
+              <option>Flux</option>
+              <option>Die Casting</option>
+              <option>Hydralic Fluid</option>
+              <option>Friction</option>
+              <option>Foundry</option>
+              <option>Battery</option>
+              <option>Automotive</option>
+              <option>Footwear</option>
+              <option>Non Automotive</option>
+              <option>Steering wheel</option>
+              <option>Others</option>
+            </select>
+          </label>
+          <label>Category
+            <select name="category" id="categorySel" required>
+              <option value="">Select</option>
+              <option>Forging Lube</option>
+              <option>Granular Flux</option>
+              <option>Die Lube</option>
+              <option>Powder Flux</option>
+              <option>Others</option>
+              <option>Plunger Lube</option>
+              <option>Ejector Pin</option>
+              <option>Ladle Coat</option>
+              <option>Water Glycol</option>
+              <option>Friction Lube</option>
+              <option>Coatings</option>
+              <option>Other</option>
+              <option>Spine Lube</option>
+              <option>Equipment</option>
+              <option>Water Based</option>
+              <option>Solvent Based</option>
+            </select>
+          </label>
+          <label>Requirement Type <input name="requirement_type" placeholder="New/Replace/Improve"></label>
+          <label>Priority
+            <select name="priority">
+              <option>Low</option>
+              <option selected>Medium</option>
+              <option>High</option>
+            </select>
+          </label>
+          <label>Customer Name <input name="customer_name"></label>
+          <label>Requirement Details <textarea name="requirement_details" rows="3"></textarea></label>
+        </div>
+
+        <!-- Category specific params -->
+        <div id="paramsContainer"></div>
+
+        <button type="submit">Get Recommendation</button>
+      </form>
+    </section>
+
+    <section id="result" class="card hidden">
+      <h2>Recommendation</h2>
+      <pre id="resultBox"></pre>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
